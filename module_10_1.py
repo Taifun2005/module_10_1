@@ -66,7 +66,7 @@ def write_words(word_count, file_name):  # word_count - количество з�
             # file.write('\n')
             # file.write(f"Какое-то слово № {i}"  + '\n')
             file.write(f"Какое-то слово № {i}\n")
-            time.sleep(0.1)
+            time.sleep(0.01)
     ended_at = time.time()
     elapsed = ended_at - started_at
     print(f'Функция работала {elapsed} СЕК')
@@ -75,16 +75,19 @@ def write_words(word_count, file_name):  # word_count - количество з�
 
 
 
-# write_words(10, 'example1.txt')
-# write_words(30, 'example2.txt')
-# write_words(200, 'example3.txt')
-# write_words(100, 'example4.txt')
+write_words(10, 'example1.txt')
+write_words(30, 'example2.txt')
+write_words(200, 'example3.txt')
+write_words(100, 'example4.txt')
 
-thread = threading.Thread(target=write_words, kwargs=(30, example6.txt))
+thread = threading.Thread(target=write_words, args=(30, 'example6.txt'))
 thread.start()
-thread = threading.Thread(target=write_words, kwargs=(200, example7.txt))
+thread.join()
+thread = threading.Thread(target=write_words, args=(200, 'example7.txt'))
 thread.start()
-thread = threading.Thread(target=write_words, kwargs=(100, example8.txt))
+thread.join()
+thread = threading.Thread(target=write_words, args=(100, 'example8.txt'))
 thread.start()
-write_words(10, example5.txt)
+thread.join()
+write_words(10, "example5.txt")
 
