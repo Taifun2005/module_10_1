@@ -75,7 +75,16 @@ def write_words(word_count, file_name):  # word_count - количество з�
 
 
 
-write_words(10, 'example1.txt')
-write_words(30, 'example2.txt')
-write_words(200, 'example3.txt')
-write_words(100, 'example4.txt')
+# write_words(10, 'example1.txt')
+# write_words(30, 'example2.txt')
+# write_words(200, 'example3.txt')
+# write_words(100, 'example4.txt')
+
+thread = threading.Thread(target=write_words, kwargs=(30, example6.txt))
+thread.start()
+thread = threading.Thread(target=write_words, kwargs=(200, example7.txt))
+thread.start()
+thread = threading.Thread(target=write_words, kwargs=(100, example8.txt))
+thread.start()
+write_words(10, example5.txt)
+
